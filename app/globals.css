@@ -28,3 +28,65 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.iphone-frame {
+  position: relative;
+  width: min(100%, 320px);
+  aspect-ratio: 9 / 19.5;
+  border-radius: 52px;
+  padding: 12px;
+  background:
+    linear-gradient(135deg, #0e7a8a 0%, #00b4d8 45%, #f58220 100%);
+  box-shadow:
+    0 24px 70px rgba(14, 122, 138, 0.28),
+    0 8px 20px rgba(10, 25, 47, 0.3);
+}
+
+.iphone-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  pointer-events: none;
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 38%;
+  height: 26px;
+  transform: translateX(-50%);
+  background: #0a192f;
+  border-radius: 0 0 18px 18px;
+  z-index: 2;
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.18);
+}
+
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 42px;
+  overflow: hidden;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.triangle-button {
+  position: relative;
+  width: 100%;
+  max-width: 230px;
+  aspect-ratio: 10 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  filter: drop-shadow(0 12px 24px rgba(6, 55, 67, 0.35));
+  transition: transform 0.25s ease;
+}
+
+.triangle-button:hover {
+  transform: translateY(-6px) scale(1.02);
+}

@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 
 const entertainmentApps = [
   "Max",
@@ -14,37 +15,39 @@ const entertainmentApps = [
 
 const plans = [
   {
-    name: "200 MEGA",
-    price: "79,90",
-    cta: "Assinar 200 Mega",
-    featured: false,
-    benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
-  },
-  {
     name: "400 MEGA",
-    price: "99,90",
+    price: "99,77",
     cta: "Assinar 400 Mega",
     featured: false,
     benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
   },
   {
     name: "600 MEGA",
-    price: "119,90",
+    price: "109,77",
     cta: "Assinar 600 Mega",
     featured: true,
-    benefits: ["100% Fibra", "Wi-Fi 6", "Suporte Prioritario", "Max + Disney+ Inclusos"],
+    badge: "MAIS VENDIDO",
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalacao Rapida", "Suporte Prioritario"],
+  },
+  {
+    name: "600 MEGA",
+    price: "119,77",
+    cta: "Assinar 600 Mega",
+    featured: false,
+    badge: "NOVO",
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalacao Rapida", "Suporte Prioritario"],
   },
   {
     name: "800 MEGA",
-    price: "149,90",
+    price: "129,77",
     cta: "Assinar 800 Mega",
     featured: false,
     benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
   },
   {
-    name: "1 GIGA",
-    price: "199,90",
-    cta: "Assinar 1 Giga",
+    name: "900 MEGA",
+    price: "149,77",
+    cta: "Assinar 900 Mega",
     featured: false,
     benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
   },
@@ -117,6 +120,25 @@ const faqItems = [
   },
 ];
 
+const quickActions = [
+  {
+    title: "Indique e Ganhe",
+    message: "Ola! Quero saber como funciona o programa Indique e Ganhe da Telefonarnet.",
+  },
+  {
+    title: "2a Via do Boleto",
+    message: "Ola! Preciso da 2a via do meu boleto da Telefonarnet.",
+  },
+  {
+    title: "Troca de Endereco",
+    message: "Ola! Quero solicitar troca de endereco da minha internet Telefonarnet.",
+  },
+  {
+    title: "Troca de Titularidade",
+    message: "Ola! Quero solicitar troca de titularidade do meu contrato Telefonarnet.",
+  },
+];
+
 export default function Page() {
   const videoARef = useRef<HTMLVideoElement>(null);
   const videoBRef = useRef<HTMLVideoElement>(null);
@@ -124,6 +146,31 @@ export default function Page() {
   const activeRef = useRef<"a" | "b">("a");
   const switchingRef = useRef(false);
   const [activeVideo, setActiveVideo] = useState<"a" | "b">("a");
+  const [cep, setCep] = useState("");
+
+  const handleCepChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const onlyDigits = e.target.value.replace(/\D/g, "").slice(0, 8);
+    const formattedCep =
+      onlyDigits.length > 5
+        ? `${onlyDigits.slice(0, 5)}-${onlyDigits.slice(5)}`
+        : onlyDigits;
+
+    setCep(formattedCep);
+  };
+
+  const handleConsultar = () => {
+    const cepDigits = cep.replace(/\D/g, "");
+
+    if (cepDigits.length !== 8) {
+      alert("Digite um CEP válido com 8 números para consultar a disponibilidade.");
+      return;
+    }
+
+    const message = `Olá, equipe Telefonarnet! Estava no site e gostaria de consultar a disponibilidade de fibra na minha rua. Meu CEP é: ${cep}`;
+    const whatsappUrl = `https://wa.me/5543000000000?text=${encodeURIComponent(message)}`;
+
+    window.location.href = whatsappUrl;
+  };
 
   const scrollPlans = (direction: "left" | "right") => {
     const scroller = plansScrollerRef.current;
@@ -239,9 +286,16 @@ export default function Page() {
         <div className="absolute inset-0 z-10 bg-[#0A192F]/60" />
 
         <nav className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-8 animate-[fade-up_0.8s_ease-out_forwards]">
-          <span className="text-xl font-bold tracking-[0.08em] text-white sm:text-2xl">
-            Telefonarnet
-          </span>
+          <a href="#" className="transition-transform duration-300 hover:scale-[1.02]">
+            <Image
+              src="/logo-telefonarnet-nova.png"
+              alt="Logo Telefonarnet"
+              width={900}
+              height={520}
+              priority
+              className="h-14 w-auto sm:h-16"
+            />
+          </a>
 
           <div className="hidden items-center gap-8 lg:flex">
             <a
@@ -298,12 +352,15 @@ export default function Page() {
                   name="cep"
                   inputMode="numeric"
                   placeholder="Digite seu CEP"
+                  value={cep}
+                  onChange={handleCepChange}
                   className="w-full rounded-lg border border-white/30 bg-white/5 p-4 text-white outline-none transition-all placeholder:text-slate-400 focus:border-cyan-400"
                 />
               </div>
 
               <button
                 type="button"
+                onClick={handleConsultar}
                 className="mt-4 w-full rounded-lg bg-[#FF8C00] p-4 font-bold text-white shadow-[0_0_24px_rgba(255,140,0,0.25)] transition-all duration-300 hover:shadow-[0_0_34px_rgba(255,140,0,0.45)]"
               >
                 Consultar Disponibilidade -&gt;
@@ -390,15 +447,15 @@ export default function Page() {
               {plans.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`snap-center min-w-[280px] md:min-w-[320px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-transform hover:-translate-y-1 ${
+                  className={`snap-center min-w-[85vw] md:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl ${
                     plan.featured
-                      ? "bg-[#0E7A8A] text-white border-[#0E7A8A]"
-                      : "bg-white text-slate-700"
+                      ? "bg-[#0E7A8A] text-white border-[#0E7A8A] lg:scale-105 z-10 opacity-100"
+                      : "bg-white text-slate-700 opacity-90 hover:opacity-100 z-0"
                   }`}
                 >
-                  {plan.featured ? (
+                  {plan.badge ? (
                     <span className="absolute -top-5 left-6 rounded-full bg-[#F58220] px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                      MAIS ESCOLHIDO
+                      {plan.badge}
                     </span>
                   ) : null}
 
@@ -462,9 +519,27 @@ export default function Page() {
       </section>
 
       <section id="sobre" className="relative w-full py-24 overflow-hidden bg-[#0C7489]">
-        <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-[#128A9F] rounded-[150px] rotate-45 opacity-80" />
-        <div className="absolute -bottom-[30%] -right-[10%] w-[800px] h-[800px] bg-[#0A657A] rounded-[200px] -rotate-12 opacity-90" />
-        <div className="absolute -top-[30%] left-[40%] w-[500px] h-[500px] bg-[#159BB3] rounded-[120px] rotate-[30deg] opacity-40" />
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute -top-[12%] -left-[8%] h-[420px] w-[420px] rotate-12 opacity-75"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#128A9F" />
+        </svg>
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute -bottom-[25%] -right-[6%] h-[620px] w-[620px] -rotate-12 opacity-90"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#0A657A" />
+        </svg>
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute -top-[28%] left-[42%] h-[380px] w-[380px] rotate-[26deg] opacity-50"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#159BB3" />
+        </svg>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <article>
@@ -492,13 +567,70 @@ export default function Page() {
             {differentials.map((item) => (
               <article
                 key={item.title}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl"
+                className="relative min-h-[230px] overflow-hidden"
               >
-                {item.icon}
-                <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-white/70 text-sm">{item.description}</p>
+                <svg
+                  viewBox="0 0 100 90"
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full"
+                >
+                  <path
+                    d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z"
+                    className="fill-white/12 stroke-white/25"
+                    strokeWidth="1.2"
+                  />
+                </svg>
+                <div className="relative z-10 flex h-full flex-col px-8 pb-8 pt-9">
+                  {item.icon}
+                  <h3 className="mb-2 mt-4 text-white font-bold text-lg">{item.title}</h3>
+                  <p className="text-white/75 text-sm leading-relaxed">{item.description}</p>
+                </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="conheca-telefonarnet" className="relative overflow-hidden bg-white py-24">
+        <div className="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-[#00B4D8]/10 blur-3xl" />
+        <div className="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-[#F58220]/10 blur-3xl" />
+
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
+          <article>
+            <span className="inline-flex rounded-full bg-[#0E7A8A]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0E7A8A]">
+              Conheca a Telefonarnet
+            </span>
+            <h2 className="mt-5 max-w-xl text-3xl font-bold leading-tight text-[#0E7A8A] sm:text-4xl">
+              Conexao que aproxima pessoas, familias e negocios.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              A Telefonarnet nasceu para entregar internet de alta performance com atendimento
+              humano e proximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
+              todos os dias para garantir estabilidade, velocidade e suporte rapido para voce.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+              Mais do que conectar dispositivos, queremos conectar historias. Por isso,
+              investimos em infraestrutura moderna e em uma equipe preparada para atender
+              com transparencia e agilidade.
+            </p>
+          </article>
+
+          <div className="flex justify-center lg:justify-end">
+            <div className="iphone-frame">
+              <div className="iphone-notch" />
+              <div className="iphone-screen">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="h-full w-full object-cover"
+                >
+                  <source src="/hero-video.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -540,6 +672,46 @@ export default function Page() {
               </div>
             </details>
           ))}
+        </div>
+      </section>
+
+      <section id="suporte-rapido" className="bg-[#0E7A8A] py-24">
+        <div className="mx-auto w-full max-w-6xl px-6 text-center">
+          <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
+            Suporte e Servicos
+          </span>
+          <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
+            Resolva tudo rapido pelo WhatsApp
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/80">
+            Toque em uma opcao e fale direto com a nossa equipe.
+          </p>
+
+          <div className="mt-12 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {quickActions.map((item) => (
+              <a
+                key={item.title}
+                href={`https://wa.me/5543000000000?text=${encodeURIComponent(item.message)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="triangle-button group"
+              >
+                <svg
+                  viewBox="0 0 100 90"
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full"
+                >
+                  <path
+                    d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z"
+                    className="fill-[#F58220] transition-colors duration-300 group-hover:fill-[#ff9f3a]"
+                  />
+                </svg>
+                <span className="relative z-10 px-6 text-center text-base font-bold leading-tight text-white">
+                  {item.title}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>
