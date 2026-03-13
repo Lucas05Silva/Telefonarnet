@@ -518,36 +518,25 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="sobre" className="relative w-full py-24 overflow-hidden bg-[#0C7489]">
-        <svg
-          viewBox="0 0 100 90"
-          aria-hidden="true"
-          className="absolute -top-[12%] -left-[8%] h-[420px] w-[420px] rotate-12 opacity-75"
-        >
-          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#128A9F" />
-        </svg>
-        <svg
-          viewBox="0 0 100 90"
-          aria-hidden="true"
-          className="absolute -bottom-[25%] -right-[6%] h-[620px] w-[620px] -rotate-12 opacity-90"
-        >
-          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#0A657A" />
-        </svg>
-        <svg
-          viewBox="0 0 100 90"
-          aria-hidden="true"
-          className="absolute -top-[28%] left-[42%] h-[380px] w-[380px] rotate-[26deg] opacity-50"
-        >
-          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" fill="#159BB3" />
-        </svg>
+      <section
+        id="sobre"
+        className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-24"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,180,216,0.10),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(243,146,0,0.08),transparent_35%)]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
           <article>
-            <h2 className="max-w-xl text-4xl font-bold leading-tight text-white sm:text-5xl">
-              Muito mais que internet. Uma conexao de verdade.
+            <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/90">
+              Tecnologia e confianca local
+            </span>
+
+            <h2 className="mt-6 max-w-2xl text-4xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-5xl">
+              Muito mais que internet.
+              <br />
+              Uma <span className="text-[#F39200]">infraestrutura premium</span> para sua rotina.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsaveis
               por levar <strong className="text-[#F39200]">conexao</strong>,{" "}
               <strong className="text-[#F39200]">entretenimento</strong> e{" "}
@@ -557,33 +546,23 @@ export default function Page() {
 
             <a
               href="#contato"
-              className="mt-10 inline-flex rounded-xl border border-white px-6 py-3 text-base font-semibold text-white transition-all hover:bg-[#F39200] hover:border-[#F39200]"
+              className="mt-10 inline-flex items-center justify-center rounded-xl bg-[#F39200] px-7 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_rgba(243,146,0,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff9f1f] hover:shadow-[0_14px_36px_rgba(243,146,0,0.38)]"
             >
               Fale com a nossa equipe
             </a>
           </article>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             {differentials.map((item) => (
               <article
                 key={item.title}
-                className="relative min-h-[230px] overflow-hidden"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_40px_rgba(0,0,0,0.35)]"
               >
-                <svg
-                  viewBox="0 0 100 90"
-                  aria-hidden="true"
-                  className="absolute inset-0 h-full w-full"
-                >
-                  <path
-                    d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z"
-                    className="fill-white/12 stroke-white/25"
-                    strokeWidth="1.2"
-                  />
-                </svg>
-                <div className="relative z-10 flex h-full flex-col px-8 pb-8 pt-9">
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(0,180,216,0.14),transparent_45%)]" />
+                <div className="relative z-10">
                   {item.icon}
-                  <h3 className="mb-2 mt-4 text-white font-bold text-lg">{item.title}</h3>
-                  <p className="text-white/75 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.description}</p>
                 </div>
               </article>
             ))}
