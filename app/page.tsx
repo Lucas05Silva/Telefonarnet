@@ -19,7 +19,7 @@ const plans = [
     price: "99,77",
     cta: "Assinar 400 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
   {
     name: "600 MEGA",
@@ -27,7 +27,7 @@ const plans = [
     cta: "Assinar 600 Mega",
     featured: true,
     badge: "MAIS VENDIDO",
-    benefits: ["100% Fibra", "Wi-Fi 6", "Instalacao Rapida", "Suporte Prioritario"],
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalação Rápida", "Suporte Prioritário"],
   },
   {
     name: "600 MEGA",
@@ -35,27 +35,27 @@ const plans = [
     cta: "Assinar 600 Mega",
     featured: false,
     badge: "NOVO",
-    benefits: ["100% Fibra", "Wi-Fi 6", "Instalacao Rapida", "Suporte Prioritario"],
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalação Rápida", "Suporte Prioritário"],
   },
   {
     name: "800 MEGA",
     price: "129,77",
     cta: "Assinar 800 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
   {
     name: "900 MEGA",
     price: "149,77",
     cta: "Assinar 900 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-fi Gratis", "Instalacao Rapida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
 ];
 
 const differentials = [
   {
-    title: "100% Fibra Optica",
+    title: "100% Fibra Óptica",
     description: "Infraestrutura moderna para manter sua velocidade estavel o dia inteiro.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
@@ -67,7 +67,7 @@ const differentials = [
   },
   {
     title: "Suporte Humanizado",
-    description: "Atendimento proximo e rapido para resolver tudo sem burocracia.",
+    description: "Atendimento próximo e rápido para resolver tudo sem burocracia.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
         <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.8" />
@@ -76,8 +76,8 @@ const differentials = [
     ),
   },
   {
-    title: "Instalacao Rapida",
-    description: "Equipe tecnica agil para ativar seu plano no menor tempo possivel.",
+    title: "Instalação Rápida",
+    description: "Equipe técnica ágil para ativar seu plano no menor tempo possível.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
         <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
@@ -100,42 +100,42 @@ const differentials = [
 
 const faqItems = [
   {
-    question: "A instalacao tem algum custo?",
-    answer: "Nao! Para todos os planos listados, a instalacao e 100% gratuita.",
+    question: "A instalação tem algum custo?",
+    answer: "Não! Para todos os planos listados, a instalação é 100% gratuita.",
   },
   {
     question: "Qual o prazo para instalarem na minha casa?",
     answer:
-      "Nossa equipe tecnica local em Londrina garante a instalacao mais rapida da regiao, em ate 48 horas uteis apos a aprovacao.",
+      "Nossa equipe técnica local em Londrina garante a instalação mais rápida da região, em até 48 horas úteis após a aprovação.",
   },
   {
-    question: "O roteador Wi-Fi ja esta incluso?",
+    question: "O roteador Wi-Fi já está incluso?",
     answer:
-      "Sim, fornecemos roteadores de alta performance (com Wi-Fi 6 nos planos elegiveis) em regime de comodato, sem custo adicional.",
+      "Sim, fornecemos roteadores de alta performance (com Wi-Fi 6 nos planos elegíveis) em regime de comodato, sem custo adicional.",
   },
   {
     question: "Como acesso os streamings (Max, Disney+, etc)?",
     answer:
-      "Apos a instalacao, voce recebera um login exclusivo no nosso app parceiro para ativar e curtir todos os seus servicos de streaming.",
+      "Após a instalação, você receberá um login exclusivo no nosso app parceiro para ativar e curtir todos os seus serviços de streaming.",
   },
 ];
 
 const quickActions = [
   {
     title: "Indique e Ganhe",
-    message: "Ola! Quero saber como funciona o programa Indique e Ganhe da Telefonarnet.",
+    message: "Olá! Quero saber como funciona o programa Indique e Ganhe da Telefonarnet.",
   },
   {
-    title: "2a Via do Boleto",
-    message: "Ola! Preciso da 2a via do meu boleto da Telefonarnet.",
+    title: "2ª Via do Boleto",
+    message: "Olá! Preciso da 2ª via do meu boleto da Telefonarnet.",
   },
   {
-    title: "Troca de Endereco",
-    message: "Ola! Quero solicitar troca de endereco da minha internet Telefonarnet.",
+    title: "Troca de Endereço",
+    message: "Olá! Quero solicitar troca de endereço da minha internet Telefonarnet.",
   },
   {
     title: "Troca de Titularidade",
-    message: "Ola! Quero solicitar troca de titularidade do meu contrato Telefonarnet.",
+    message: "Olá! Quero solicitar troca de titularidade do meu contrato Telefonarnet.",
   },
 ];
 
@@ -302,7 +302,7 @@ export default function Page() {
               href="#servicos"
               className="text-sm font-medium text-slate-200 transition hover:text-[#00B4D8]"
             >
-              Servicos
+              Serviços
             </a>
             <a
               href="#suporte"
@@ -367,7 +367,7 @@ export default function Page() {
               </button>
 
               <p className="font-sans mt-4 text-xs leading-relaxed text-slate-400">
-                Consulta rapida e sem compromisso.
+                Consulta rápida e sem compromisso.
               </p>
             </div>
           </div>
@@ -414,7 +414,7 @@ export default function Page() {
               ESCOLHA SUA VELOCIDADE
             </span>
             <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
-              Planos de internet fibra optica feitos para voce.
+              Planos de internet fibra óptica feitos para você.
             </h2>
           </div>
 
@@ -467,7 +467,7 @@ export default function Page() {
                   <p className={`font-display mt-5 text-4xl font-bold leading-tight tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
                     R$ {plan.price}
                     <span className={`text-lg font-medium ${plan.featured ? "text-white/80" : "text-slate-500"}`}>
-                      /mes
+                      /mês
                     </span>
                   </p>
 
@@ -501,7 +501,7 @@ export default function Page() {
 
           <div className="max-w-4xl mx-auto bg-[#0E7A8A] rounded-2xl py-6 px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg mt-8">
             <div className="w-full">
-              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">Ficou com alguma duvida?</h3>
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">Ficou com alguma dúvida?</h3>
               <p className="font-sans mt-2 max-w-lg text-sm leading-relaxed text-white/80">
                 Fale com um de nossos consultores especialistas. Te ajudamos a escolher o plano perfeito para a sua necessidade.
               </p>
@@ -550,7 +550,7 @@ export default function Page() {
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/90">
-              Tecnologia e confianca local
+              Tecnologia e confiança local
             </span>
 
             <h2 className="font-display mt-6 max-w-2xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
@@ -560,10 +560,10 @@ export default function Page() {
             </h2>
 
             <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-              Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsaveis
-              por levar <strong className="text-[#F39200]">conexao</strong>,{" "}
+              Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsáveis
+              por levar <strong className="text-[#F39200]">conexão</strong>,{" "}
               <strong className="text-[#F39200]">entretenimento</strong> e{" "}
-              <strong className="text-[#F39200]">lazer</strong> para milhares de familias e
+              <strong className="text-[#F39200]">lazer</strong> para milhares de famílias e
               empresas.
             </p>
 
@@ -601,20 +601,20 @@ export default function Page() {
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full bg-[#0E7A8A]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0E7A8A]">
-              Conheca a Telefonarnet
+              Conheça a Telefonarnet
             </span>
             <h2 className="font-display mt-5 max-w-xl text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
-              Conexao que aproxima pessoas, familias e negocios.
+              Conexão que aproxima pessoas, famílias e negócios.
             </h2>
             <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               A Telefonarnet nasceu para entregar internet de alta performance com atendimento
-              humano e proximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
-              todos os dias para garantir estabilidade, velocidade e suporte rapido para voce.
+              humano e próximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
+              todos os dias para garantir estabilidade, velocidade e suporte rápido para você.
             </p>
             <p className="font-sans mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-              Mais do que conectar dispositivos, queremos conectar historias. Por isso,
+              Mais do que conectar dispositivos, queremos conectar histórias. Por isso,
               investimos em infraestrutura moderna e em uma equipe preparada para atender
-              com transparencia e agilidade.
+              com transparência e agilidade.
             </p>
           </article>
 
@@ -647,7 +647,7 @@ export default function Page() {
             Perguntas Frequentes
           </h2>
           <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-500">
-            Tudo o que voce precisa saber antes de assinar a melhor internet de Londrina.
+            Tudo o que você precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
 
@@ -682,13 +682,13 @@ export default function Page() {
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="mx-auto w-full max-w-6xl px-6 text-center">
           <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
-            Suporte e Servicos
+            Suporte e Serviços
           </span>
           <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
-            Resolva tudo rapido pelo WhatsApp
+            Resolva tudo rápido pelo WhatsApp
           </h2>
           <p className="font-sans mx-auto mt-4 max-w-2xl leading-relaxed text-white/80">
-            Toque em uma opcao e fale direto com a nossa equipe.
+            Toque em uma opção e fale direto com a nossa equipe.
           </p>
 
           <div className="mt-12 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
