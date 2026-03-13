@@ -325,13 +325,13 @@ export default function Page() {
               A internet definitiva de Londrina
             </div>
 
-            <h1 className="mt-7 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-[-0.03em] text-white text-balance">
-              A <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">velocidade</span> que você merece,
+            <h1 className="font-display mt-7 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white text-balance">
+              A <span className="text-[#00B4D8]">velocidade</span> que você merece,
               <br className="hidden md:block" /> com a{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">estabilidade</span> que você precisa.
+              <span className="text-[#00B4D8]">estabilidade</span> que você precisa.
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">
+            <p className="font-sans mt-7 max-w-xl text-lg leading-relaxed text-slate-300 sm:text-xl">
               Planos 100% fibra com os melhores streamings inclusos. Consulte a
               disponibilidade na sua rua agora mesmo.
             </p>
@@ -339,7 +339,7 @@ export default function Page() {
 
           <div className="flex justify-center opacity-0 animate-[fade-up_0.9s_ease-out_forwards] [animation-delay:260ms] lg:justify-end">
             <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md">
-              <h2 className="text-3xl font-bold leading-tight text-white">
+              <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-white">
                 Verifique sua cobertura
               </h2>
 
@@ -366,7 +366,7 @@ export default function Page() {
                 Consultar Disponibilidade -&gt;
               </button>
 
-              <p className="mt-4 text-xs text-slate-400">
+              <p className="font-sans mt-4 text-xs leading-relaxed text-slate-400">
                 Consulta rapida e sem compromisso.
               </p>
             </div>
@@ -381,11 +381,11 @@ export default function Page() {
         id="parceiros-streaming"
         className="relative w-full overflow-hidden bg-slate-50 py-20 flex flex-col items-center"
       >
-        <p className="text-sm font-bold uppercase tracking-widest text-[#F58220]">
+        <p className="font-sans text-sm font-bold uppercase tracking-widest text-[#F58220]">
           ENTRETENIMENTO PREMIUM
         </p>
 
-        <h2 className="mx-auto mt-4 max-w-3xl px-6 text-center text-3xl font-bold leading-tight text-[#0E7A8A] sm:text-4xl lg:text-5xl">
+        <h2 className="font-display mx-auto mt-4 max-w-3xl px-6 text-center text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl lg:text-5xl">
           Acesso ilimitado aos seus apps favoritos.
         </h2>
 
@@ -413,7 +413,7 @@ export default function Page() {
             <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
               ESCOLHA SUA VELOCIDADE
             </span>
-            <h2 className="mt-5 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)] sm:text-4xl">
+            <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
               Planos de internet fibra optica feitos para voce.
             </h2>
           </div>
@@ -450,7 +450,7 @@ export default function Page() {
                   key={plan.name}
                   className={`snap-center min-w-[85vw] md:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)] ${
                     plan.featured
-                      ? "bg-[#0E7A8A] text-white border-cyan-300/80 lg:scale-105 z-10 opacity-100 animate-pulse shadow-[0_0_24px_rgba(0,180,216,0.35)]"
+                      ? "bg-[#0E7A8A] text-white border-cyan-300/80 lg:scale-105 z-10 opacity-100 shadow-[0_0_24px_rgba(0,180,216,0.35)]"
                       : "bg-white text-slate-700 opacity-90 hover:opacity-100 z-0"
                   }`}
                 >
@@ -460,18 +460,18 @@ export default function Page() {
                     </span>
                   ) : null}
 
-                  <h3 className={`text-2xl font-bold ${plan.featured ? "text-white" : "text-[#0E7A8A]"}`}>
+                  <h3 className={`font-display text-2xl font-bold leading-tight tracking-tight ${plan.featured ? "text-white" : "text-[#0E7A8A]"}`}>
                     {plan.name}
                   </h3>
 
-                  <p className={`mt-5 text-4xl font-bold ${plan.featured ? "text-white" : "text-slate-900"}`}>
+                  <p className={`font-display mt-5 text-4xl font-bold leading-tight tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
                     R$ {plan.price}
                     <span className={`text-lg font-medium ${plan.featured ? "text-white/80" : "text-slate-500"}`}>
                       /mes
                     </span>
                   </p>
 
-                  <ul className="mt-6 space-y-3">
+                  <ul className="font-sans mt-6 space-y-3">
                     {plan.benefits.map((benefit) => (
                       <li key={`${plan.name}-${benefit}`} className="flex items-center gap-3">
                         <span className="text-[#F58220]">
@@ -501,8 +501,8 @@ export default function Page() {
 
           <div className="max-w-4xl mx-auto bg-[#0E7A8A] rounded-2xl py-6 px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg mt-8">
             <div className="w-full">
-              <h3 className="text-xl md:text-2xl font-bold text-white">Ficou com alguma duvida?</h3>
-              <p className="mt-2 max-w-lg text-sm text-white/80">
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">Ficou com alguma duvida?</h3>
+              <p className="font-sans mt-2 max-w-lg text-sm leading-relaxed text-white/80">
                 Fale com um de nossos consultores especialistas. Te ajudamos a escolher o plano perfeito para a sua necessidade.
               </p>
             </div>
@@ -523,6 +523,27 @@ export default function Page() {
         id="sobre"
         className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-24"
       >
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none top-10 -left-10 w-32 rotate-12 opacity-20"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
+        </svg>
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none top-1/2 -right-10 w-40 -rotate-12 opacity-25"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
+        </svg>
+        <svg
+          viewBox="0 0 100 90"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none bottom-10 left-1/3 w-48 rotate-45 opacity-30"
+        >
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
+        </svg>
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,180,216,0.10),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(243,146,0,0.08),transparent_35%)]" />
 
@@ -532,13 +553,13 @@ export default function Page() {
               Tecnologia e confianca local
             </span>
 
-            <h2 className="mt-6 max-w-2xl text-4xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-5xl">
+            <h2 className="font-display mt-6 max-w-2xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
               Muito mais que internet.
               <br />
-              Uma <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">infraestrutura premium</span> para sua rotina.
+              Uma <span className="text-[#F39200]">infraestrutura premium</span> para sua rotina.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
               Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsaveis
               por levar <strong className="text-[#F39200]">conexao</strong>,{" "}
               <strong className="text-[#F39200]">entretenimento</strong> e{" "}
@@ -563,8 +584,8 @@ export default function Page() {
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(0,180,216,0.14),transparent_45%)]" />
                 <div className="relative z-10">
                   {item.icon}
-                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.description}</p>
+                  <h3 className="font-display mt-5 text-lg font-semibold leading-tight tracking-tight text-white">{item.title}</h3>
+                  <p className="font-sans mt-3 text-sm leading-relaxed text-slate-300">{item.description}</p>
                 </div>
               </article>
             ))}
@@ -582,15 +603,15 @@ export default function Page() {
             <span className="inline-flex rounded-full bg-[#0E7A8A]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0E7A8A]">
               Conheca a Telefonarnet
             </span>
-            <h2 className="mt-5 max-w-xl text-3xl font-bold leading-tight text-[#0E7A8A] sm:text-4xl">
+            <h2 className="font-display mt-5 max-w-xl text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
               Conexao que aproxima pessoas, familias e negocios.
             </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               A Telefonarnet nasceu para entregar internet de alta performance com atendimento
               humano e proximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
               todos os dias para garantir estabilidade, velocidade e suporte rapido para voce.
             </p>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="font-sans mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
               Mais do que conectar dispositivos, queremos conectar historias. Por isso,
               investimos em infraestrutura moderna e em uma equipe preparada para atender
               com transparencia e agilidade.
@@ -617,27 +638,51 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-24">
-        <div className="mx-auto w-full max-w-5xl px-6 text-center">
-          <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
+      <section className="relative overflow-hidden bg-[#0A192F] py-24">
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none -top-10 -left-10 w-80 rotate-12 opacity-[0.04]"
+        >
+          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#00B4D8]" />
+        </svg>
+
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none -bottom-10 -right-10 w-64 -rotate-12 opacity-[0.03]"
+        >
+          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#F58220]" />
+        </svg>
+
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          className="absolute z-0 pointer-events-none top-1/3 right-1/4 w-40 rotate-45 opacity-[0.06]"
+        >
+          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#00B4D8]" />
+        </svg>
+
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center">
+          <span className="inline-flex rounded-full border border-[#F58220]/20 bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
             TIRE SUAS DUVIDAS
           </span>
-          <h2 className="mt-5 text-3xl font-bold text-[#0E7A8A] sm:text-4xl">
-            Perguntas Frequentes
+          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+            Para Clientes
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-slate-500">
+          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-300">
             Tudo o que voce precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
+        <div className="relative z-10 max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300"
+              className="group overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/40 shadow-sm transition-all duration-300 hover:border-[#00B4D8]/50"
             >
-              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-                <span className="text-lg font-semibold text-[#0E7A8A]">
+              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-white/10 [&::-webkit-details-marker]:hidden">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-white">
                   {item.question}
                 </span>
                 <span className="text-2xl font-semibold text-[#F58220] transition-transform duration-300 group-open:rotate-45">
@@ -647,7 +692,7 @@ export default function Page() {
 
               <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
                 <div className="overflow-hidden">
-                  <p className="p-6 pt-0 leading-relaxed text-slate-600">
+                  <p className="font-sans bg-transparent p-6 pt-0 leading-relaxed text-slate-300">
                     {item.answer}
                   </p>
                 </div>
@@ -663,10 +708,10 @@ export default function Page() {
           <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
             Suporte e Servicos
           </span>
-          <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
             Resolva tudo rapido pelo WhatsApp
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/80">
+          <p className="font-sans mx-auto mt-4 max-w-2xl leading-relaxed text-white/80">
             Toque em uma opcao e fale direto com a nossa equipe.
           </p>
 
