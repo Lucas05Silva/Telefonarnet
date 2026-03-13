@@ -638,51 +638,27 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0A192F] py-24">
-        <svg
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-          className="absolute z-0 pointer-events-none -top-10 -left-10 w-80 rotate-12 opacity-[0.04]"
-        >
-          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#00B4D8]" />
-        </svg>
-
-        <svg
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-          className="absolute z-0 pointer-events-none -bottom-10 -right-10 w-64 -rotate-12 opacity-[0.03]"
-        >
-          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#F58220]" />
-        </svg>
-
-        <svg
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-          className="absolute z-0 pointer-events-none top-1/3 right-1/4 w-40 rotate-45 opacity-[0.06]"
-        >
-          <path d="M50 5 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 Z" className="fill-[#00B4D8]" />
-        </svg>
-
-        <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center">
-          <span className="inline-flex rounded-full border border-[#F58220]/20 bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
+      <section className="bg-slate-50 py-24">
+        <div className="mx-auto w-full max-w-5xl px-6 text-center">
+          <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
             TIRE SUAS DUVIDAS
           </span>
-          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
-            Para Clientes
+          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
+            Perguntas Frequentes
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-300">
+          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-500">
             Tudo o que voce precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
+        <div className="max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/40 shadow-sm transition-all duration-300 hover:border-[#00B4D8]/50"
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300"
             >
-              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-white/10 [&::-webkit-details-marker]:hidden">
-                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-white">
+              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-[#0E7A8A]">
                   {item.question}
                 </span>
                 <span className="text-2xl font-semibold text-[#F58220] transition-transform duration-300 group-open:rotate-45">
@@ -692,7 +668,7 @@ export default function Page() {
 
               <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
                 <div className="overflow-hidden">
-                  <p className="font-sans bg-transparent p-6 pt-0 leading-relaxed text-slate-300">
+                  <p className="font-sans p-6 pt-0 leading-relaxed text-slate-600">
                     {item.answer}
                   </p>
                 </div>
@@ -702,7 +678,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="suporte-rapido" className="relative bg-[#0E7A8A] py-24">
+      <section id="suporte-rapido" className="relative bg-[#0A192F] py-24">
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="mx-auto w-full max-w-6xl px-6 text-center">
           <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
@@ -722,7 +698,7 @@ export default function Page() {
                 href={`https://wa.me/5543000000000?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="triangle-button group shadow-[0_0_10px_rgba(245,130,32,0.25)] transition-all duration-300 hover:shadow-[0_0_24px_rgba(245,130,32,0.5)]"
+                className="triangle-button group shadow-[0_0_10px_rgba(0,180,216,0.22)] transition-all duration-300 hover:shadow-[0_0_24px_rgba(0,180,216,0.45)]"
               >
                 <svg
                   viewBox="0 0 100 90"
@@ -731,7 +707,7 @@ export default function Page() {
                 >
                   <path
                     d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z"
-                    className="fill-[#F58220] transition-colors duration-300 group-hover:fill-[#ff9f3a]"
+                    className="fill-[#00B4D8] transition-colors duration-300 group-hover:fill-[#33cbe5]"
                   />
                 </svg>
                 <span className="relative z-10 px-6 text-center text-base font-bold leading-tight text-white">
