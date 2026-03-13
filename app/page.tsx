@@ -326,9 +326,9 @@ export default function Page() {
             </div>
 
             <h1 className="mt-7 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-[-0.03em] text-white text-balance">
-              A <span className="text-[#00B4D8]">velocidade</span> que você merece,
+              A <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">velocidade</span> que você merece,
               <br className="hidden md:block" /> com a{" "}
-              <span className="text-[#00B4D8]">estabilidade</span> que você precisa.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">estabilidade</span> que você precisa.
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">
@@ -361,7 +361,7 @@ export default function Page() {
               <button
                 type="button"
                 onClick={handleConsultar}
-                className="mt-4 w-full rounded-lg bg-[#FF8C00] p-4 font-bold text-white shadow-[0_0_24px_rgba(255,140,0,0.25)] transition-all duration-300 hover:shadow-[0_0_34px_rgba(255,140,0,0.45)]"
+                className="mt-4 w-full rounded-lg bg-[#FF8C00] p-4 font-bold text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
               >
                 Consultar Disponibilidade -&gt;
               </button>
@@ -374,6 +374,7 @@ export default function Page() {
         </div>
 
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-20 h-24 w-1 -translate-x-1/2 translate-y-1/2 bg-gradient-to-b from-cyan-500 to-orange-500 shadow-[0_0_18px_rgba(0,180,216,0.55)]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
       </section>
 
       <section
@@ -412,7 +413,7 @@ export default function Page() {
             <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
               ESCOLHA SUA VELOCIDADE
             </span>
-            <h2 className="mt-5 text-3xl font-bold leading-tight text-[#0E7A8A] sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)] sm:text-4xl">
               Planos de internet fibra optica feitos para voce.
             </h2>
           </div>
@@ -447,9 +448,9 @@ export default function Page() {
               {plans.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`snap-center min-w-[85vw] md:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl ${
+                  className={`snap-center min-w-[85vw] md:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)] ${
                     plan.featured
-                      ? "bg-[#0E7A8A] text-white border-[#0E7A8A] lg:scale-105 z-10 opacity-100"
+                      ? "bg-[#0E7A8A] text-white border-cyan-300/80 lg:scale-105 z-10 opacity-100 animate-pulse shadow-[0_0_24px_rgba(0,180,216,0.35)]"
                       : "bg-white text-slate-700 opacity-90 hover:opacity-100 z-0"
                   }`}
                 >
@@ -485,10 +486,10 @@ export default function Page() {
 
                   <button
                     type="button"
-                    className={`mt-8 w-full rounded-xl px-5 py-3 font-semibold transition-colors ${
+                    className={`mt-8 w-full rounded-xl px-5 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${
                       plan.featured
-                        ? "bg-[#F58220] text-white hover:bg-orange-600"
-                        : "border border-[#F58220] text-[#F58220] hover:bg-[#F58220] hover:text-white"
+                        ? "bg-[#F58220] text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] hover:bg-orange-600 hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
+                        : "border border-[#F58220] text-[#F58220] shadow-[0_0_10px_rgba(245,130,32,0.15)] hover:bg-[#F58220] hover:text-white hover:shadow-[0_0_24px_rgba(245,130,32,0.45)]"
                     }`}
                   >
                     {plan.cta}
@@ -510,7 +511,7 @@ export default function Page() {
               href="https://wa.me/5543000000000"
               target="_blank"
               rel="noreferrer"
-              className="w-full md:w-auto rounded-lg bg-[#25D366] px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-green-500"
+              className="w-full md:w-auto rounded-lg bg-[#F58220] px-6 py-3 text-center text-sm font-semibold text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff9f1f] hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
             >
               Falar com Consultor
             </a>
@@ -522,6 +523,7 @@ export default function Page() {
         id="sobre"
         className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-24"
       >
+        <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,180,216,0.10),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(243,146,0,0.08),transparent_35%)]" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
@@ -533,7 +535,7 @@ export default function Page() {
             <h2 className="mt-6 max-w-2xl text-4xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-5xl">
               Muito mais que internet.
               <br />
-              Uma <span className="text-[#F39200]">infraestrutura premium</span> para sua rotina.
+              Uma <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_12px_rgba(0,180,216,0.6)]">infraestrutura premium</span> para sua rotina.
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
@@ -546,7 +548,7 @@ export default function Page() {
 
             <a
               href="#contato"
-              className="mt-10 inline-flex items-center justify-center rounded-xl bg-[#F39200] px-7 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_rgba(243,146,0,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff9f1f] hover:shadow-[0_14px_36px_rgba(243,146,0,0.38)]"
+              className="mt-10 inline-flex items-center justify-center rounded-xl bg-[#F39200] px-7 py-3.5 text-base font-semibold text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff9f1f] hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
             >
               Fale com a nossa equipe
             </a>
@@ -556,7 +558,7 @@ export default function Page() {
             {differentials.map((item) => (
               <article
                 key={item.title}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_40px_rgba(0,0,0,0.35)]"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-[2px] transition-all duration-300 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)]"
               >
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(0,180,216,0.14),transparent_45%)]" />
                 <div className="relative z-10">
@@ -568,6 +570,7 @@ export default function Page() {
             ))}
           </div>
         </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
       </section>
 
       <section id="conheca-telefonarnet" className="relative overflow-hidden bg-white py-24">
@@ -654,7 +657,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="suporte-rapido" className="bg-[#0E7A8A] py-24">
+      <section id="suporte-rapido" className="relative bg-[#0E7A8A] py-24">
+        <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="mx-auto w-full max-w-6xl px-6 text-center">
           <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
             Suporte e Servicos
@@ -673,7 +677,7 @@ export default function Page() {
                 href={`https://wa.me/5543000000000?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="triangle-button group"
+                className="triangle-button group shadow-[0_0_10px_rgba(245,130,32,0.25)] transition-all duration-300 hover:shadow-[0_0_24px_rgba(245,130,32,0.5)]"
               >
                 <svg
                   viewBox="0 0 100 90"
@@ -696,3 +700,5 @@ export default function Page() {
     </main>
   );
 }
+
+
