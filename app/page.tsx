@@ -19,7 +19,7 @@ const plans = [
     price: "99,77",
     cta: "Assinar 400 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-Fi GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tis", "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
   {
     name: "600 MEGA",
@@ -27,7 +27,7 @@ const plans = [
     cta: "Assinar 600 Mega",
     featured: true,
     badge: "MAIS VENDIDO",
-    benefits: ["100% Fibra", "Wi-Fi 6", "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida", "Suporte PrioritÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rio"],
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalação Rápida", "Suporte Prioritário"],
   },
   {
     name: "600 MEGA",
@@ -35,28 +35,28 @@ const plans = [
     cta: "Assinar 600 Mega",
     featured: false,
     badge: "NOVO",
-    benefits: ["100% Fibra", "Wi-Fi 6", "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida", "Suporte PrioritÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rio"],
+    benefits: ["100% Fibra", "Wi-Fi 6", "Instalação Rápida", "Suporte Prioritário"],
   },
   {
     name: "800 MEGA",
     price: "129,77",
     cta: "Assinar 800 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-Fi GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tis", "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
   {
     name: "900 MEGA",
     price: "149,77",
     cta: "Assinar 900 Mega",
     featured: false,
-    benefits: ["100% Fibra", "Wi-Fi GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tis", "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida"],
+    benefits: ["100% Fibra", "Wi-Fi Grátis", "Instalação Rápida"],
   },
 ];
 
 const differentials = [
   {
-    title: "100% Fibra ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œptica",
-    description: "Infraestrutura moderna para manter sua velocidade estavel o dia inteiro.",
+    title: "100% Fibra Óptica",
+    description: "Infraestrutura moderna para manter sua velocidade estável o dia inteiro.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
         <path d="M4 16C8 12 16 12 20 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -67,7 +67,7 @@ const differentials = [
   },
   {
     title: "Suporte Humanizado",
-    description: "Atendimento prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximo e rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pido para resolver tudo sem burocracia.",
+    description: "Atendimento próximo e rápido para resolver tudo sem burocracia.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
         <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.8" />
@@ -76,8 +76,8 @@ const differentials = [
     ),
   },
   {
-    title: "InstalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida",
-    description: "Equipe tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©cnica ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gil para ativar seu plano no menor tempo possÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­vel.",
+    title: "Instalação Rápida",
+    description: "Equipe técnica ágil para ativar seu plano no menor tempo possível.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-10 w-10 text-[#F39200]">
         <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
@@ -100,42 +100,42 @@ const differentials = [
 
 const faqItems = [
   {
-    question: "A instalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o tem algum custo?",
-    answer: "NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o! Para todos os planos listados, a instalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© 100% gratuita.",
+    question: "A instalação tem algum custo?",
+    answer: "Não. Para todos os planos listados, a instalação é 100% gratuita.",
   },
   {
     question: "Qual o prazo para instalarem na minha casa?",
     answer:
-      "Nossa equipe tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©cnica local em Londrina garante a instalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o mais rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida da regiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o, em atÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© 48 horas ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºteis apÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³s a aprovaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.",
+      "Nossa equipe técnica local em Londrina garante a instalação mais rápida da região, em até 48 horas úteis após a aprovação.",
   },
   {
-    question: "O roteador Wi-Fi jÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ estÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ incluso?",
+    question: "O roteador Wi-Fi já está incluso?",
     answer:
-      "Sim, fornecemos roteadores de alta performance (com Wi-Fi 6 nos planos elegÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­veis) em regime de comodato, sem custo adicional.",
+      "Sim, fornecemos roteadores de alta performance, com Wi-Fi 6 nos planos elegíveis, em regime de comodato e sem custo adicional.",
   },
   {
     question: "Como acesso os streamings (Max, Disney+, etc)?",
     answer:
-      "ApÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³s a instalaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o, vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª receberÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ um login exclusivo no nosso app parceiro para ativar e curtir todos os seus serviÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§os de streaming.",
+      "Após a instalação, você receberá um login exclusivo no nosso app parceiro para ativar e curtir todos os seus serviços de streaming.",
   },
 ];
 
 const quickActions = [
   {
     title: "Indique e Ganhe",
-    message: "OlÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡! Quero saber como funciona o programa Indique e Ganhe da Telefonarnet.",
+    message: "Olá. Quero saber como funciona o programa Indique e Ganhe da Telefonarnet.",
   },
   {
-    title: "2ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âª Via do Boleto",
-    message: "OlÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡! Preciso da 2ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âª via do meu boleto da Telefonarnet.",
+    title: "2ª Via do Boleto",
+    message: "Olá. Preciso da 2ª via do meu boleto da Telefonarnet.",
   },
   {
-    title: "Troca de EndereÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§o",
-    message: "OlÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡! Quero solicitar troca de endereÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§o da minha internet Telefonarnet.",
+    title: "Troca de Endereço",
+    message: "Olá. Quero solicitar a troca de endereço da minha internet Telefonarnet.",
   },
   {
     title: "Troca de Titularidade",
-    message: "OlÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡! Quero solicitar troca de titularidade do meu contrato Telefonarnet.",
+    message: "Olá. Quero solicitar a troca de titularidade do meu contrato Telefonarnet.",
   },
 ];
 
@@ -166,11 +166,11 @@ export default function Page() {
     const cepDigits = cep.replace(/\D/g, "");
 
     if (cepDigits.length !== 8) {
-      alert("Digite um CEP vÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡lido com 8 nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºmeros para consultar a disponibilidade.");
+      alert("Digite um CEP válido com 8 números para consultar a disponibilidade.");
       return;
     }
 
-    const message = `OlÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡, equipe Telefonarnet! Estava no site e gostaria de consultar a disponibilidade de fibra na minha rua. Meu CEP ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©: ${cep}`;
+    const message = `Olá, equipe Telefonarnet. Estava no site e gostaria de consultar a disponibilidade de fibra na minha rua. Meu CEP é: ${cep}`;
     const whatsappUrl = `https://wa.me/554330325000?text=${encodeURIComponent(message)}`;
 
     window.location.href = whatsappUrl;
@@ -344,7 +344,7 @@ export default function Page() {
               href="#servicos"
               className="text-sm font-medium text-slate-200 transition hover:text-[#00B4D8]"
             >
-              ServiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§os
+              Serviços
             </a>
             <a
               href="#suporte"
@@ -368,9 +368,9 @@ export default function Page() {
             </div>
 
             <h1 className="font-display mt-7 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white text-balance">
-              A <span className="text-[#00B4D8]">velocidade</span> que vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª merece,
+              A <span className="text-[#00B4D8]">velocidade</span> que você merece,
               <br className="hidden md:block" /> com a{" "}
-              <span className="text-[#00B4D8]">estabilidade</span> que vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª precisa.
+              <span className="text-[#00B4D8]">estabilidade</span> que você precisa.
             </h1>
 
             <p className="font-sans mt-7 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-300">
@@ -409,7 +409,7 @@ export default function Page() {
               </button>
 
               <p className="font-sans mt-4 text-xs leading-relaxed text-slate-400">
-                Consulta rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pida e sem compromisso.
+                Consulta rápida e sem compromisso.
               </p>
             </div>
           </div>
@@ -456,7 +456,7 @@ export default function Page() {
               ESCOLHA SUA VELOCIDADE
             </span>
             <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
-              Planos de internet fibra ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ptica feitos para vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª.
+              Planos de internet fibra óptica feitos para você.
             </h2>
           </div>
 
@@ -474,7 +474,7 @@ export default function Page() {
 
             <button
               type="button"
-              aria-label="PrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximos planos"
+              aria-label="Próximos planos"
               onClick={() => scrollPlans("right")}
               className="absolute top-1/2 -translate-y-1/2 z-20 -right-4 md:-right-8 w-14 h-14 bg-white rounded-full shadow-2xl hidden md:flex items-center justify-center text-[#0E7A8A] border border-slate-100 hover:scale-110 hover:bg-[#F58220] hover:text-white transition-all cursor-pointer"
             >
@@ -509,7 +509,7 @@ export default function Page() {
                   <p className={`font-display mt-5 text-4xl font-bold leading-tight tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
                     R$ {plan.price}
                     <span className={`text-lg font-medium ${plan.featured ? "text-white/80" : "text-slate-500"}`}>
-                      /mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªs
+                      /mês
                     </span>
                   </p>
 
@@ -543,7 +543,7 @@ export default function Page() {
 
           <div className="max-w-4xl mx-auto bg-[#0E7A8A] rounded-2xl py-6 px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg mt-8">
             <div className="w-full">
-              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">Ficou com alguma dÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºvida?</h3>
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">Ficou com alguma dúvida?</h3>
               <p className="font-sans mt-2 max-w-lg text-sm leading-relaxed text-white/80">
                 Fale com um de nossos consultores especialistas. Te ajudamos a escolher o plano perfeito para a sua necessidade.
               </p>
@@ -592,7 +592,7 @@ export default function Page() {
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/90">
-              Tecnologia e confianÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§a local
+              Tecnologia e confiança local
             </span>
 
             <h2 className="font-display mt-6 max-w-2xl text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
@@ -602,10 +602,10 @@ export default function Page() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg text-slate-400">
-              Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡veis
-              por levar <strong className="text-[#F39200]">conexÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o</strong>,{" "}
+              Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsáveis
+              por levar <strong className="text-[#F39200]">conexão</strong>,{" "}
               <strong className="text-[#F39200]">entretenimento</strong> e{" "}
-              <strong className="text-[#F39200]">lazer</strong> para milhares de famÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­lias e
+              <strong className="text-[#F39200]">lazer</strong> para milhares de famílias e
               empresas.
             </p>
 
@@ -645,20 +645,20 @@ export default function Page() {
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full bg-[#0E7A8A]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0E7A8A]">
-              ConheÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§a a Telefonarnet
+              Conheça a Telefonarnet
             </span>
             <h2 className="font-display mt-5 max-w-xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
-              ConexÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o que aproxima pessoas, famÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­lias e negÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³cios.
+              Conexão que aproxima pessoas, famílias e negócios.
             </h2>
             <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               A Telefonarnet nasceu para entregar internet de alta performance com atendimento
-              humano e prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
-              todos os dias para garantir estabilidade, velocidade e suporte rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pido para vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª.
+              humano e próximo. Somos uma empresa local, apaixonada por tecnologia, que trabalha
+              todos os dias para garantir estabilidade, velocidade e suporte rápido para você.
             </p>
             <p className="font-sans mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-              Mais do que conectar dispositivos, queremos conectar histÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rias. Por isso,
+              Mais do que conectar dispositivos, queremos conectar histórias. Por isso,
               investimos em infraestrutura moderna e em uma equipe preparada para atender
-              com transparÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncia e agilidade.
+              com transparência e agilidade.
             </p>
           </article>
 
@@ -753,7 +753,7 @@ export default function Page() {
             Perguntas Frequentes
           </h2>
           <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-400">
-            Tudo o que vocÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âª precisa saber antes de assinar a melhor internet de Londrina.
+            {"Tudo o que voc\u00ea precisa saber antes de assinar a melhor internet de Londrina."}
           </p>
         </div>
 
@@ -790,13 +790,13 @@ export default function Page() {
         <div className="pointer-events-none absolute -bottom-20 -right-16 z-0 h-64 w-64 rounded-full bg-[#F58220]/10 blur-3xl" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex rounded-full border border-[#F58220]/30 bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#F58220]">
-            Suporte e ServiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§os
+            {"Suporte e Servi\u00e7os"}
           </span>
           <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
-            Resolva tudo rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pido pelo WhatsApp
+            {"Resolva tudo r\u00e1pido pelo WhatsApp"}
           </h2>
           <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-slate-600">
-            Toque em uma opÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o e fale direto com a nossa equipe.
+            {"Toque em uma op\u00e7\u00e3o e fale direto com a nossa equipe."}
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -851,13 +851,13 @@ export default function Page() {
               priority
             />
             <p className="text-slate-400 text-sm mt-4">
-              ConexÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de verdade e suporte humano para Londrina e regiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.
+              {"Conex\u00e3o de verdade e suporte humano para Londrina e regi\u00e3o."}
             </p>
           </div>
 
           <div>
             <h4 className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-slate-200">
-              Links RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡pidos
+              {"Links R\u00e1pidos"}
             </h4>
             <div className="mt-4 flex flex-col gap-2">
               <a href="#planos" className="text-slate-300 hover:text-[#00B4D8] text-sm">
@@ -867,7 +867,7 @@ export default function Page() {
                 Sobre
               </a>
               <a href="#" className="text-slate-300 hover:text-[#00B4D8] text-sm">
-                ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Ârea do Cliente
+                {"\u00c1rea do Cliente"}
               </a>
               <a
                 href="https://www.instagram.com/telefonarnet/"
@@ -890,12 +890,12 @@ export default function Page() {
 
           <div>
             <h4 className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-slate-200">
-              TransparÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncia Legal
+              {"Transpar\u00eancia Legal"}
             </h4>
             <p className="mt-4 text-slate-400 text-xs leading-relaxed">
               CNPJ: 27.924.375/0001-02
               <br />
-              EndereÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§o: Av. Jules Verne, 77 - Conj. Santa Rita 7, Londrina - PR, 86072-450, Brasil
+              {"Endere\u00e7o: Av. Jules Verne, 77 - Conj. Santa Rita 7, Londrina - PR, 86072-450, Brasil"}
               <br />
               Empresa autorizada pela ANATEL
             </p>
@@ -904,7 +904,7 @@ export default function Page() {
 
         <div className="relative z-10">
           <hr className="my-8 border-white/10" />
-          <p className="text-center text-slate-500 text-sm">Ã‚Â© 2026 Telefonarnet. Todos os direitos reservados.</p>
+          <p className="text-center text-slate-500 text-sm">{"\u00a9 2026 Telefonarnet. Todos os direitos reservados."}</p>
         </div>
       </footer>
 
