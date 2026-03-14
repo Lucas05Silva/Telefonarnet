@@ -640,15 +640,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16 md:py-24">
+      <section className="bg-[#0A192F] py-16 md:py-24">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
             TIRE SUAS DUVIDAS
           </span>
-          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
+          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Perguntas Frequentes
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-500">
+          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-400">
             Tudo o que você precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
@@ -657,10 +657,10 @@ export default function Page() {
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300"
+              className="group overflow-hidden rounded-2xl border border-slate-700/50 bg-white/5 shadow-sm transition-all duration-300 hover:bg-white/10"
             >
-              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-[#0E7A8A]">
+              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-white/10 [&::-webkit-details-marker]:hidden">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-white">
                   {item.question}
                 </span>
                 <span className="text-2xl font-semibold text-[#F58220] transition-transform duration-300 group-open:rotate-45">
@@ -670,7 +670,7 @@ export default function Page() {
 
               <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
                 <div className="overflow-hidden">
-                  <p className="font-sans p-6 pt-0 leading-relaxed text-slate-600">
+                  <p className="font-sans p-6 pt-0 leading-relaxed text-slate-300">
                     {item.answer}
                   </p>
                 </div>
@@ -680,17 +680,17 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="suporte-rapido" className="relative overflow-hidden bg-[#0A192F] py-16 md:py-24">
-        <div className="pointer-events-none absolute -top-24 -left-20 z-0 h-72 w-72 rounded-full bg-[#00B4D8]/15 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -right-16 z-0 h-64 w-64 rounded-full bg-[#F58220]/15 blur-3xl" />
+      <section id="suporte-rapido" className="relative overflow-hidden bg-slate-50 py-16 md:py-24">
+        <div className="pointer-events-none absolute -top-24 -left-20 z-0 h-72 w-72 rounded-full bg-[#00B4D8]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -right-16 z-0 h-64 w-64 rounded-full bg-[#F58220]/10 blur-3xl" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex rounded-full border border-[#F58220]/30 bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#F58220]">
             Suporte e Serviços
           </span>
-          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
             Resolva tudo rápido pelo WhatsApp
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-slate-300">
+          <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-slate-600">
             Toque em uma opção e fale direto com a nossa equipe.
           </p>
 
@@ -701,9 +701,9 @@ export default function Page() {
                 href={`https://wa.me/554330325000?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex min-h-36 items-center justify-center rounded-2xl border border-slate-700/60 bg-white/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#00B4D8]/70 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(0,180,216,0.2)]"
+                className="group flex min-h-36 items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 hover:shadow-lg"
               >
-                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-white transition-colors duration-300 group-hover:text-[#8CEBFF]">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-[#0E7A8A] transition-colors duration-300 group-hover:text-[#00B4D8]">
                   {item.title}
                 </span>
               </a>
@@ -715,7 +715,14 @@ export default function Page() {
       <footer className="bg-[#050B14] py-12 border-t border-white/10 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <div>
-            <h3 className="font-display font-bold text-2xl text-white">Telefonarnet</h3>
+            <Image
+              src="/logo-telefonarnet-nova.png"
+              alt="Logo Telefonarnet"
+              width={220}
+              height={64}
+              className="h-12 w-auto"
+              priority
+            />
             <p className="text-slate-400 text-sm mt-4">
               Conexão de verdade e suporte humano para Londrina e região.
             </p>
@@ -735,6 +742,22 @@ export default function Page() {
               <a href="#" className="text-slate-300 hover:text-[#00B4D8] text-sm">
                 Área do Cliente
               </a>
+              <a
+                href="https://www.instagram.com/telefonarnet/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 hover:text-[#00B4D8] text-sm"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.tiktok.com/@telefonarnet?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 hover:text-[#00B4D8] text-sm"
+              >
+                TikTok
+              </a>
             </div>
           </div>
 
@@ -743,9 +766,9 @@ export default function Page() {
               Transparência Legal
             </h4>
             <p className="mt-4 text-slate-400 text-xs leading-relaxed">
-              CNPJ: 00.000.000/0001-00
+              CNPJ: 27.924.375/0001-02
               <br />
-              Rua Exemplo, 123 - Londrina, PR
+              Endereço: Av. Jules Verne, 77 - Conj. Santa Rita 7, Londrina - PR, 86072-450, Brasil
               <br />
               Empresa autorizada pela ANATEL
             </p>
