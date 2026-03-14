@@ -254,8 +254,8 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="bg-[#0A192F] text-white">
-      <section className="relative min-h-screen overflow-visible bg-[#0A192F] text-white">
+    <main className="overflow-x-hidden bg-[#0A192F] text-white">
+      <section className="relative min-h-screen overflow-hidden bg-[#0A192F] text-white">
         <video
           ref={videoARef}
           autoPlay
@@ -285,7 +285,7 @@ export default function Page() {
         <div className="absolute inset-0 z-10 bg-black/50" />
         <div className="absolute inset-0 z-10 bg-[#0A192F]/60" />
 
-        <nav className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-8 animate-[fade-up_0.8s_ease-out_forwards]">
+        <nav className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8 animate-[fade-up_0.8s_ease-out_forwards]">
           <a href="#" className="transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src="/logo-telefonarnet-nova.png"
@@ -319,19 +319,19 @@ export default function Page() {
           </div>
         </nav>
 
-        <div className="relative z-20 mx-auto grid min-h-[calc(100vh-92px)] max-w-7xl items-center gap-14 px-6 pb-20 pt-8 lg:grid-cols-2 lg:gap-20 lg:px-8">
-          <div className="max-w-2xl opacity-0 animate-[fade-up_0.9s_ease-out_forwards] [animation-delay:120ms]">
-            <div className="inline-flex rounded-full border border-[#00B4D8]/40 bg-[#00B4D8]/10 px-4 py-2 text-xs font-semibold tracking-[0.12em] text-[#7AE7FF]">
+        <div className="relative z-20 mx-auto grid grid-cols-1 min-h-[calc(100vh-92px)] max-w-7xl items-center gap-14 px-4 pb-16 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8 lg:pb-20">
+          <div className="max-w-2xl text-center lg:text-left opacity-0 animate-[fade-up_0.9s_ease-out_forwards] [animation-delay:120ms]">
+            <div className="mx-auto lg:mx-0 inline-flex rounded-full border border-[#00B4D8]/40 bg-[#00B4D8]/10 px-4 py-2 text-xs font-semibold tracking-[0.12em] text-[#7AE7FF]">
               A internet definitiva de Londrina
             </div>
 
-            <h1 className="font-display mt-7 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white text-balance">
+            <h1 className="font-display mt-7 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white text-balance">
               A <span className="text-[#00B4D8]">velocidade</span> que você merece,
               <br className="hidden md:block" /> com a{" "}
               <span className="text-[#00B4D8]">estabilidade</span> que você precisa.
             </h1>
 
-            <p className="font-sans mt-7 max-w-xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+            <p className="font-sans mt-7 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-300">
               Planos 100% fibra com os melhores streamings inclusos. Consulte a
               disponibilidade na sua rua agora mesmo.
             </p>
@@ -379,13 +379,13 @@ export default function Page() {
 
       <section
         id="parceiros-streaming"
-        className="relative w-full overflow-hidden bg-slate-50 py-20 flex flex-col items-center"
+        className="relative w-full overflow-hidden bg-slate-50 py-16 md:py-20 flex flex-col items-center"
       >
         <p className="font-sans text-sm font-bold uppercase tracking-widest text-[#F58220]">
           ENTRETENIMENTO PREMIUM
         </p>
 
-        <h2 className="font-display mx-auto mt-4 max-w-3xl px-6 text-center text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl lg:text-5xl">
+        <h2 className="font-display mx-auto mt-4 max-w-3xl px-4 sm:px-6 lg:px-8 text-center text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
           Acesso ilimitado aos seus apps favoritos.
         </h2>
 
@@ -407,13 +407,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="planos" className="relative w-full overflow-hidden bg-white py-24">
-        <div className="mx-auto w-full max-w-7xl px-6">
+      <section id="planos" className="relative w-full overflow-hidden bg-white py-16 md:py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
             <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
               ESCOLHA SUA VELOCIDADE
             </span>
-            <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
+            <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
               Planos de internet fibra óptica feitos para você.
             </h2>
           </div>
@@ -423,7 +423,7 @@ export default function Page() {
               type="button"
               aria-label="Planos anteriores"
               onClick={() => scrollPlans("left")}
-              className="absolute top-1/2 -translate-y-1/2 z-20 -left-4 md:-left-8 w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center text-[#0E7A8A] border border-slate-100 hover:scale-110 hover:bg-[#F58220] hover:text-white transition-all cursor-pointer"
+              className="absolute top-1/2 -translate-y-1/2 z-20 -left-4 md:-left-8 w-14 h-14 bg-white rounded-full shadow-2xl hidden md:flex items-center justify-center text-[#0E7A8A] border border-slate-100 hover:scale-110 hover:bg-[#F58220] hover:text-white transition-all cursor-pointer"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none" aria-hidden="true">
                 <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -434,7 +434,7 @@ export default function Page() {
               type="button"
               aria-label="Próximos planos"
               onClick={() => scrollPlans("right")}
-              className="absolute top-1/2 -translate-y-1/2 z-20 -right-4 md:-right-8 w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center text-[#0E7A8A] border border-slate-100 hover:scale-110 hover:bg-[#F58220] hover:text-white transition-all cursor-pointer"
+              className="absolute top-1/2 -translate-y-1/2 z-20 -right-4 md:-right-8 w-14 h-14 bg-white rounded-full shadow-2xl hidden md:flex items-center justify-center text-[#0E7A8A] border border-slate-100 hover:scale-110 hover:bg-[#F58220] hover:text-white transition-all cursor-pointer"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none" aria-hidden="true">
                 <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -448,7 +448,7 @@ export default function Page() {
               {plans.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`snap-center min-w-[85vw] md:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)] ${
+                  className={`snap-center min-w-[85vw] sm:min-w-[320px] lg:min-w-[340px] rounded-2xl p-6 shadow-lg relative border border-slate-200 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)] ${
                     plan.featured
                       ? "bg-[#0E7A8A] text-white border-cyan-300/80 lg:scale-105 z-10 opacity-100 shadow-[0_0_24px_rgba(0,180,216,0.35)]"
                       : "bg-white text-slate-700 opacity-90 hover:opacity-100 z-0"
@@ -521,39 +521,39 @@ export default function Page() {
 
       <section
         id="sobre"
-        className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-24"
+        className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-16 md:py-24"
       >
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none top-10 -left-10 w-32 rotate-12 opacity-20"
+          className="absolute z-0 pointer-events-none hidden sm:block top-10 -left-10 w-20 md:w-32 rotate-12 opacity-20"
         >
           <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
         </svg>
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none top-1/2 -right-10 w-40 -rotate-12 opacity-25"
+          className="absolute z-0 pointer-events-none hidden sm:block top-1/2 -right-10 w-24 md:w-40 -rotate-12 opacity-25"
         >
           <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
         </svg>
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none bottom-10 left-1/3 w-48 rotate-45 opacity-30"
+          className="absolute z-0 pointer-events-none hidden sm:block bottom-10 left-1/3 w-28 md:w-48 rotate-45 opacity-30"
         >
           <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
         </svg>
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,180,216,0.10),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(243,146,0,0.08),transparent_35%)]" />
 
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/90">
               Tecnologia e confiança local
             </span>
 
-            <h2 className="font-display mt-6 max-w-2xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
+            <h2 className="font-display mt-6 max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white">
               Muito mais que internet.
               <br />
               Uma <span className="text-[#F39200]">infraestrutura premium</span> para sua rotina.
@@ -594,16 +594,16 @@ export default function Page() {
         <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
       </section>
 
-      <section id="conheca-telefonarnet" className="relative overflow-hidden bg-white py-24">
+      <section id="conheca-telefonarnet" className="relative overflow-hidden bg-white py-16 md:py-24">
         <div className="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-[#00B4D8]/10 blur-3xl" />
         <div className="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-[#F58220]/10 blur-3xl" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-4 sm:px-6 lg:px-8 lg:grid-cols-2">
           <article>
             <span className="inline-flex rounded-full bg-[#0E7A8A]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0E7A8A]">
               Conheça a Telefonarnet
             </span>
-            <h2 className="font-display mt-5 max-w-xl text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
+            <h2 className="font-display mt-5 max-w-xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
               Conexão que aproxima pessoas, famílias e negócios.
             </h2>
             <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
@@ -638,37 +638,39 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-24">
-        <div className="mx-auto w-full max-w-5xl px-6 text-center">
-          <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
+      <section className="relative overflow-hidden bg-[#0A192F] py-16 md:py-24">
+        <div className="pointer-events-none absolute -top-[20%] -left-[10%] z-0 h-[500px] w-[500px] rounded-full bg-[#00B4D8]/10 blur-[120px]" />
+        <div className="pointer-events-none absolute bottom-[10%] -right-[10%] z-0 h-[400px] w-[400px] rounded-full bg-[#F58220]/10 blur-[120px]" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <span className="mb-4 inline-flex text-sm font-bold uppercase tracking-widest text-[#F58220]">
             TIRE SUAS DUVIDAS
           </span>
-          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-[#0E7A8A] sm:text-4xl">
-            Perguntas Frequentes
+          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
+            Para Clientes
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-500">
+          <p className="font-sans mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
             Tudo o que você precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
+        <div className="relative z-10 mx-auto mt-12 flex max-w-4xl flex-col px-6">
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300"
+              className="group border-b border-slate-800/60 py-6"
             >
-              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-[#0E7A8A]">
+              <summary className="flex list-none cursor-pointer items-center justify-between text-xl font-medium text-white transition-colors hover:text-[#00B4D8] [&::-webkit-details-marker]:hidden">
+                <span className="font-display leading-tight tracking-tight">
                   {item.question}
                 </span>
-                <span className="text-2xl font-semibold text-[#F58220] transition-transform duration-300 group-open:rotate-45">
+                <span className="text-2xl text-[#00B4D8] transition-transform duration-300 group-open:rotate-45">
                   +
                 </span>
               </summary>
 
               <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
                 <div className="overflow-hidden">
-                  <p className="font-sans p-6 pt-0 leading-relaxed text-slate-600">
+                  <p className="font-sans mt-4 pr-12 leading-relaxed text-slate-400">
                     {item.answer}
                   </p>
                 </div>
@@ -678,16 +680,16 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="suporte-rapido" className="relative bg-[#0A192F] py-24">
+      <section id="suporte-rapido" className="relative overflow-hidden bg-[#0A192F] py-16 md:py-24">
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
-        <div className="mx-auto w-full max-w-6xl px-6 text-center">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
             Suporte e Serviços
           </span>
-          <h2 className="font-display mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Resolva tudo rápido pelo WhatsApp
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-2xl leading-relaxed text-white/80">
+          <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-white/80">
             Toque em uma opção e fale direto com a nossa equipe.
           </p>
 
