@@ -167,7 +167,7 @@ export default function Page() {
     }
 
     const message = `Olá, equipe Telefonarnet! Estava no site e gostaria de consultar a disponibilidade de fibra na minha rua. Meu CEP é: ${cep}`;
-    const whatsappUrl = `https://wa.me/5543000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/554330325000?text=${encodeURIComponent(message)}`;
 
     window.location.href = whatsappUrl;
   };
@@ -311,7 +311,7 @@ export default function Page() {
               Suporte
             </a>
             <a
-              href="tel:+554300000000"
+              href="tel:+554330325000"
               className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-[#FF8C00] hover:bg-white/5"
             >
               Ligar
@@ -508,7 +508,7 @@ export default function Page() {
             </div>
 
             <a
-              href="https://wa.me/5543000000000"
+              href="https://wa.me/554330325000"
               target="_blank"
               rel="noreferrer"
               className="w-full md:w-auto rounded-lg bg-[#F58220] px-6 py-3 text-center text-sm font-semibold text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff9f1f] hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
@@ -632,7 +632,7 @@ export default function Page() {
                   preload="auto"
                   className="absolute inset-0 h-full w-full object-cover rounded-[2.5rem]"
                 >
-                  <source src="/hero-video.mp4" type="video/mp4" />
+                  <source src="/video-celular.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -698,7 +698,7 @@ export default function Page() {
             {quickActions.map((item) => (
               <a
                 key={item.title}
-                href={`https://wa.me/5543000000000?text=${encodeURIComponent(item.message)}`}
+                href={`https://wa.me/554330325000?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex min-h-36 items-center justify-center rounded-2xl border border-slate-700/60 bg-white/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#00B4D8]/70 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(0,180,216,0.2)]"
@@ -757,7 +757,7 @@ export default function Page() {
       </footer>
 
       <a
-        href="https://wa.me/5543000000000"
+        href="https://wa.me/554330325000"
         target="_blank"
         rel="noreferrer"
         aria-label="Falar com a Telefonarnet no WhatsApp"
@@ -770,5 +770,6 @@ export default function Page() {
     </main>
   );
 }
+
 
 
