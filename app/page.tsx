@@ -621,16 +621,16 @@ export default function Page() {
           </article>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="iphone-frame">
-              <div className="iphone-notch" />
-              <div className="iphone-screen">
+            <div className="relative mx-auto h-[550px] w-[260px] sm:h-[600px] sm:w-[280px] rounded-[3rem] border-[8px] border-slate-900 bg-slate-900 shadow-2xl overflow-hidden ring-1 ring-slate-200">
+              <div className="absolute top-0 left-1/2 z-20 h-6 w-32 -translate-x-1/2 rounded-b-3xl bg-slate-900"></div>
+              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="auto"
-                  className="h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover rounded-[2.5rem]"
                 >
                   <source src="/hero-video.mp4" type="video/mp4" />
                 </video>
@@ -711,6 +711,62 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-[#050B14] py-12 border-t border-white/10 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div>
+            <h3 className="font-display font-bold text-2xl text-white">Telefonarnet</h3>
+            <p className="text-slate-400 text-sm mt-4">
+              Conexão de verdade e suporte humano para Londrina e região.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-slate-200">
+              Links Rápidos
+            </h4>
+            <div className="mt-4 flex flex-col gap-2">
+              <a href="#planos" className="text-slate-300 hover:text-[#00B4D8] text-sm">
+                Planos
+              </a>
+              <a href="#sobre" className="text-slate-300 hover:text-[#00B4D8] text-sm">
+                Sobre
+              </a>
+              <a href="#" className="text-slate-300 hover:text-[#00B4D8] text-sm">
+                Área do Cliente
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-slate-200">
+              Transparência Legal
+            </h4>
+            <p className="mt-4 text-slate-400 text-xs leading-relaxed">
+              CNPJ: 00.000.000/0001-00
+              <br />
+              Rua Exemplo, 123 - Londrina, PR
+              <br />
+              Empresa autorizada pela ANATEL
+            </p>
+          </div>
+        </div>
+
+        <hr className="my-8 border-white/10" />
+        <p className="text-center text-slate-500 text-sm">© 2026 Telefonarnet. Todos os direitos reservados.</p>
+      </footer>
+
+      <a
+        href="https://wa.me/5543000000000"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Falar com a Telefonarnet no WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_25px_rgba(37,211,102,0.6)]"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7 fill-current">
+          <path d="M12.04 2C6.5 2 2 6.42 2 11.88c0 1.92.57 3.79 1.65 5.39L2.03 22l4.9-1.58a10.1 10.1 0 0 0 5.11 1.38h.01c5.54 0 10.04-4.42 10.04-9.88C22.09 6.42 17.59 2 12.04 2Zm5.86 14.03c-.24.67-1.41 1.28-1.94 1.36-.5.08-1.14.11-1.84-.11-.42-.14-.97-.31-1.67-.6-2.94-1.22-4.85-4.08-5-4.28-.15-.2-1.2-1.55-1.2-2.95s.74-2.08 1-2.37c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.17.01.4-.06.63.48.24.57.8 1.96.87 2.1.07.14.12.31.02.5-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.29.29-.12.57.17.28.76 1.24 1.63 2.01 1.12.99 2.07 1.29 2.36 1.44.29.14.45.12.62-.07.17-.2.72-.83.91-1.11.19-.29.38-.24.64-.14.26.1 1.65.77 1.94.91.29.14.48.21.55.33.07.12.07.7-.17 1.37Z" />
+        </svg>
+      </a>
     </main>
   );
 }
