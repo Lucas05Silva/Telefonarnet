@@ -638,39 +638,37 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0A192F] py-16 md:py-24">
-        <div className="pointer-events-none absolute -top-[20%] -left-[10%] z-0 h-[500px] w-[500px] rounded-full bg-[#00B4D8]/10 blur-[120px]" />
-        <div className="pointer-events-none absolute bottom-[10%] -right-[10%] z-0 h-[400px] w-[400px] rounded-full bg-[#F58220]/10 blur-[120px]" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <span className="mb-4 inline-flex text-sm font-bold uppercase tracking-widest text-[#F58220]">
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex rounded-full bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#F58220]">
             TIRE SUAS DUVIDAS
           </span>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Para Clientes
+          <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#0E7A8A]">
+            Perguntas Frequentes
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
+          <p className="font-sans mx-auto mt-4 max-w-3xl leading-relaxed text-slate-500">
             Tudo o que você precisa saber antes de assinar a melhor internet de Londrina.
           </p>
         </div>
 
-        <div className="relative z-10 mx-auto mt-12 flex max-w-4xl flex-col px-6">
+        <div className="max-w-3xl mx-auto mt-12 flex flex-col gap-4 px-4">
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group border-b border-slate-800/60 py-6"
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300"
             >
-              <summary className="flex list-none cursor-pointer items-center justify-between text-xl font-medium text-white transition-colors hover:text-[#00B4D8] [&::-webkit-details-marker]:hidden">
-                <span className="font-display leading-tight tracking-tight">
+              <summary className="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-[#0E7A8A]">
                   {item.question}
                 </span>
-                <span className="text-2xl text-[#00B4D8] transition-transform duration-300 group-open:rotate-45">
+                <span className="text-2xl font-semibold text-[#F58220] transition-transform duration-300 group-open:rotate-45">
                   +
                 </span>
               </summary>
 
               <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
                 <div className="overflow-hidden">
-                  <p className="font-sans mt-4 pr-12 leading-relaxed text-slate-400">
+                  <p className="font-sans p-6 pt-0 leading-relaxed text-slate-600">
                     {item.answer}
                   </p>
                 </div>
@@ -681,38 +679,29 @@ export default function Page() {
       </section>
 
       <section id="suporte-rapido" className="relative overflow-hidden bg-[#0A192F] py-16 md:py-24">
-        <div className="pointer-events-none absolute top-0 left-0 z-20 h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shadow-[0_0_15px_#00B4D8]" />
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#C9F7FF]">
+        <div className="pointer-events-none absolute -top-24 -left-20 z-0 h-72 w-72 rounded-full bg-[#00B4D8]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -right-16 z-0 h-64 w-64 rounded-full bg-[#F58220]/15 blur-3xl" />
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex rounded-full border border-[#F58220]/30 bg-[#F58220]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#F58220]">
             Suporte e Serviços
           </span>
           <h2 className="font-display mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Resolva tudo rápido pelo WhatsApp
           </h2>
-          <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-white/80">
+          <p className="font-sans mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-slate-300">
             Toque em uma opção e fale direto com a nossa equipe.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickActions.map((item) => (
               <a
                 key={item.title}
                 href={`https://wa.me/5543000000000?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="triangle-button group shadow-[0_0_10px_rgba(0,180,216,0.22)] transition-all duration-300 hover:shadow-[0_0_24px_rgba(0,180,216,0.45)]"
+                className="group flex min-h-36 items-center justify-center rounded-2xl border border-slate-700/60 bg-white/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#00B4D8]/70 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(0,180,216,0.2)]"
               >
-                <svg
-                  viewBox="0 0 100 90"
-                  aria-hidden="true"
-                  className="absolute inset-0 h-full w-full"
-                >
-                  <path
-                    d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z"
-                    className="fill-[#00B4D8] transition-colors duration-300 group-hover:fill-[#33cbe5]"
-                  />
-                </svg>
-                <span className="relative z-10 px-6 text-center text-base font-bold leading-tight text-white">
+                <span className="font-display text-lg font-semibold leading-tight tracking-tight text-white transition-colors duration-300 group-hover:text-[#8CEBFF]">
                   {item.title}
                 </span>
               </a>
