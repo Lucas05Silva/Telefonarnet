@@ -142,11 +142,15 @@ const quickActions = [
 export default function Page() {
   const videoARef = useRef<HTMLVideoElement>(null);
   const videoBRef = useRef<HTMLVideoElement>(null);
+  const phoneVideoRef = useRef<HTMLVideoElement>(null);
   const plansScrollerRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef<"a" | "b">("a");
   const switchingRef = useRef(false);
   const [activeVideo, setActiveVideo] = useState<"a" | "b">("a");
   const [cep, setCep] = useState("");
+  const [phoneIsPlaying, setPhoneIsPlaying] = useState(true);
+  const [phoneIsMuted, setPhoneIsMuted] = useState(true);
+  const [phoneVolume, setPhoneVolume] = useState(0.6);
 
   const handleCepChange = (e: ChangeEvent<HTMLInputElement>) => {
     const onlyDigits = e.target.value.replace(/\D/g, "").slice(0, 8);
@@ -177,6 +181,44 @@ export default function Page() {
     if (!scroller) return;
     const amount = direction === "left" ? -340 : 340;
     scroller.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const togglePhonePlayback = async () => {
+    const video = phoneVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      try {
+        await video.play();
+        setPhoneIsPlaying(true);
+      } catch {
+        setPhoneIsPlaying(false);
+      }
+      return;
+    }
+
+    video.pause();
+    setPhoneIsPlaying(false);
+  };
+
+  const togglePhoneMute = () => {
+    const video = phoneVideoRef.current;
+    if (!video) return;
+    const nextMuted = !phoneIsMuted;
+    video.muted = nextMuted;
+    setPhoneIsMuted(nextMuted);
+  };
+
+  const handlePhoneVolumeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const nextVolume = Number(e.target.value);
+    const video = phoneVideoRef.current;
+    if (!video) return;
+
+    video.volume = nextVolume;
+    const shouldMute = nextVolume === 0;
+    video.muted = shouldMute;
+    setPhoneVolume(nextVolume);
+    setPhoneIsMuted(shouldMute);
   };
 
   useEffect(() => {
@@ -621,19 +663,58 @@ export default function Page() {
           </article>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative mx-auto h-[550px] w-[260px] sm:h-[600px] sm:w-[280px] rounded-[3rem] border-[8px] border-slate-900 bg-slate-900 shadow-2xl overflow-hidden ring-1 ring-slate-200">
+            <div className="relative mx-auto h-[600px] w-[290px] sm:h-[660px] sm:w-[320px] rounded-[3rem] border-[8px] border-slate-900 bg-slate-900 shadow-2xl overflow-hidden ring-1 ring-slate-200">
               <div className="absolute top-0 left-1/2 z-20 h-6 w-32 -translate-x-1/2 rounded-b-3xl bg-slate-900"></div>
-              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
+              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden bg-black">
                 <video
+                  ref={phoneVideoRef}
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="auto"
-                  className="absolute inset-0 h-full w-full object-cover rounded-[2.5rem]"
+                  controlsList="nofullscreen nodownload noplaybackrate noremoteplayback"
+                  disablePictureInPicture
+                  onLoadedMetadata={() => {
+                    if (!phoneVideoRef.current) return;
+                    phoneVideoRef.current.volume = phoneVolume;
+                  }}
+                  onPlay={() => setPhoneIsPlaying(true)}
+                  onPause={() => setPhoneIsPlaying(false)}
+                  className="absolute inset-0 h-full w-full object-contain rounded-[2.5rem] bg-black"
                 >
                   <source src="/video-celular.mp4" type="video/mp4" />
                 </video>
+                <div className="absolute bottom-4 left-4 right-4 z-30 rounded-2xl border border-white/20 bg-black/55 p-3 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={togglePhonePlayback}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
+                      aria-label={phoneIsPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
+                    >
+                      {phoneIsPlaying ? "||" : ">"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={togglePhoneMute}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
+                      aria-label={phoneIsMuted ? "Ativar som" : "Silenciar vídeo"}
+                    >
+                      {phoneIsMuted ? "M" : "S"}
+                    </button>
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.05"
+                      value={phoneVolume}
+                      onChange={handlePhoneVolumeChange}
+                      aria-label="Controle de volume do vídeo"
+                      className="h-1 w-full cursor-pointer appearance-none rounded-lg bg-white/30 accent-[#00B4D8]"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
