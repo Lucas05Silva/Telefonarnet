@@ -521,26 +521,26 @@ export default function Page() {
 
       <section
         id="sobre"
-        className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A192F] to-[#040C18] py-16 md:py-24"
+        className="relative w-full overflow-hidden bg-radial-[at_50%_0%] from-[#0A192F] to-[#050B14] py-16 md:py-24"
       >
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none hidden sm:block top-10 -left-10 w-20 md:w-32 rotate-12 opacity-20"
+          className="absolute z-0 pointer-events-none -top-10 -left-10 w-40 rotate-12 opacity-[0.04]"
         >
           <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
         </svg>
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none hidden sm:block top-1/2 -right-10 w-24 md:w-40 -rotate-12 opacity-25"
+          className="absolute z-0 pointer-events-none bottom-20 right-10 w-32 -rotate-12 opacity-[0.03]"
         >
-          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
+          <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#F58220]" />
         </svg>
         <svg
           viewBox="0 0 100 90"
           aria-hidden="true"
-          className="absolute z-0 pointer-events-none hidden sm:block bottom-10 left-1/3 w-28 md:w-48 rotate-45 opacity-30"
+          className="absolute z-0 pointer-events-none top-1/3 left-1/4 w-20 rotate-45 opacity-[0.05]"
         >
           <path d="M50 6Q55 6 58 11L93 73Q96 79 91 83Q88 85 83 85H17Q12 85 9 83Q4 79 7 73L42 11Q45 6 50 6Z" className="fill-[#00B4D8]" />
         </svg>
@@ -553,13 +553,13 @@ export default function Page() {
               Tecnologia e confiança local
             </span>
 
-            <h2 className="font-display mt-6 max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white">
+            <h2 className="font-display mt-6 max-w-2xl text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
               Muito mais que internet.
               <br />
               Uma <span className="text-[#F39200]">infraestrutura premium</span> para sua rotina.
             </h2>
 
-            <p className="font-sans mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-6 max-w-2xl text-lg text-slate-400">
               Localizada em <strong className="text-[#F39200]">Londrina</strong>, somos responsáveis
               por levar <strong className="text-[#F39200]">conexão</strong>,{" "}
               <strong className="text-[#F39200]">entretenimento</strong> e{" "}
@@ -569,7 +569,7 @@ export default function Page() {
 
             <a
               href="#contato"
-              className="mt-10 inline-flex items-center justify-center rounded-xl bg-[#F39200] px-7 py-3.5 text-base font-semibold text-white shadow-[0_0_15px_rgba(245,130,32,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff9f1f] hover:shadow-[0_0_30px_rgba(245,130,32,0.8)]"
+              className="mt-10 inline-flex items-center justify-center rounded-2xl bg-[#F39200] px-7 py-3.5 text-base font-semibold text-white shadow-[0_0_15px_rgba(255,140,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#ff9f1f] hover:shadow-[0_0_25px_rgba(255,140,0,0.5)]"
             >
               Fale com a nossa equipe
             </a>
@@ -579,12 +579,14 @@ export default function Page() {
             {differentials.map((item) => (
               <article
                 key={item.title}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-[2px] transition-all duration-300 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(0,180,216,0.15)]"
+                className="group relative overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/20 p-8 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(0,180,216,0.1)]"
               >
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(0,180,216,0.14),transparent_45%)]" />
                 <div className="relative z-10">
-                  {item.icon}
-                  <h3 className="font-display mt-5 text-lg font-semibold leading-tight tracking-tight text-white">{item.title}</h3>
+                  <div className="w-fit transition-transform duration-300 group-hover:scale-110">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-display mt-5 text-lg font-semibold leading-tight tracking-tight text-white transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,180,216,0.4)]">{item.title}</h3>
                   <p className="font-sans mt-3 text-sm leading-relaxed text-slate-300">{item.description}</p>
                 </div>
               </article>
